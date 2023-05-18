@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare Excel Files</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+    }
+    
+    .form-container > div {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .form-container p {
+      margin: 0;
+      text-align: center;
+    }
+    
+    .form-container input[type="file"],
+    .form-container textarea {
+      margin-top: 5px;
+      padding: 8px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      width: 250px;
+      box-sizing: border-box;
+    }
+    
+    .form-container button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Lee's Excel Comparison App</h2>
+    <div>
+      <p>Master File</p>
+      <input type="file" id="excel-file1" />
+    </div>
+
+    <div>
+        <p>Columns in master file to output if comparing columns match</p>
+      <textarea id="match-column-names" placeholder="Match Column Names (comma-separated)"></textarea>
+    </div>
+
+    <div>
+        <p>Columns in both files to compare</p>
+      <textarea id="column-names" placeholder="Column Names (comma-separated)"></textarea>
+    </div>
+  
+    <div>
+      <p>File to compare against master file</p>
+      <input type="file" id="excel-file2" />
+    </div>
+  
+    <div>
+      <button onclick="compareFiles()">Compare and download Files</button>
+    </div>
+  </div>
+  
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="script-2.js"></script>
+</body>
+</html>
